@@ -1,28 +1,26 @@
 import { Renderer } from "./render.ts";
 
-export enum GemColor {
-  Red,
-  Orange,
-  Yellow,
-  Green,
-  Blue,
-  Purple,
-  White,
-}
+const gemColors = [
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "purple",
+  "white",
+] as const;
+export type GemColor = (typeof gemColors)[number];
 
-export const randomGemColor = (): GemColor => Math.floor(Math.random() * 7);
+export const randomGemColor = (): GemColor =>
+  gemColors[Math.floor(Math.random() * gemColors.length)];
 
-export enum GemType {
-  Plain,
-  Explodey,
-  Cross,
-  Hyper,
-}
+const gemTypes = ["plain", "explodey", "cross", "hyper"] as const;
+export type GemType = (typeof gemTypes)[number];
 
 export class Gem {
   constructor(color?: GemColor, type?: GemType) {
     this.color = color ?? randomGemColor();
-    this.type = type ?? GemType.Plain;
+    this.type = type ?? "plain";
   }
 
   color: GemColor;

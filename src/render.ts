@@ -1,4 +1,4 @@
-import { GemColor, type Gem } from "./engine.ts";
+import { type GemColor, type Gem } from "./engine.ts";
 
 export class Renderer {
   public constructor(canvas: HTMLCanvasElement | null) {
@@ -24,10 +24,10 @@ export class Renderer {
     const offsetY = coordinates.y * 100;
     this.ctx.strokeStyle = "black";
     this.ctx.stroke();
+    this.ctx.fillStyle = gem.color;
 
     switch (gem.color) {
-      case GemColor.Red:
-        this.ctx.fillStyle = "red";
+      case "red":
         this.ctx.beginPath();
         this.ctx.moveTo(offsetX + 15, offsetY + 15);
         this.ctx.lineTo(offsetX + 85, offsetY + 15);
@@ -37,8 +37,7 @@ export class Renderer {
         this.ctx.fill();
 
         break;
-      case GemColor.Orange:
-        this.ctx.fillStyle = "orange";
+      case "orange":
         this.ctx.beginPath();
         this.ctx.moveTo(offsetX + 50, offsetY + 10);
         this.ctx.lineTo(offsetX + 84, offsetY + 30);
@@ -49,8 +48,7 @@ export class Renderer {
         this.ctx.lineTo(offsetX + 50, offsetY + 10);
         this.ctx.fill();
         break;
-      case GemColor.Yellow:
-        this.ctx.fillStyle = "yellow";
+      case "yellow":
         this.ctx.beginPath();
         this.ctx.moveTo(offsetX + 50, offsetY + 10);
         this.ctx.lineTo(offsetX + 90, offsetY + 50);
@@ -59,8 +57,7 @@ export class Renderer {
         this.ctx.lineTo(offsetX + 50, offsetY + 10);
         this.ctx.fill();
         break;
-      case GemColor.Green:
-        this.ctx.fillStyle = "green";
+      case "green":
         this.ctx.beginPath();
         this.ctx.moveTo(offsetX + 50 - 15, offsetY + 10);
         this.ctx.lineTo(offsetX + 50 + 15, offsetY + 10);
@@ -73,8 +70,7 @@ export class Renderer {
         this.ctx.lineTo(offsetX + 50 - 15, offsetY + 10);
         this.ctx.fill();
         break;
-      case GemColor.Blue:
-        this.ctx.fillStyle = "blue";
+      case "blue":
         this.ctx.beginPath();
         this.ctx.moveTo(offsetX + 10 + 20, offsetY + 10);
         this.ctx.lineTo(offsetX + 10 + 60, offsetY + 10);
@@ -84,8 +80,7 @@ export class Renderer {
         this.ctx.lineTo(offsetX + 10 + 20, offsetY + 10);
         this.ctx.fill();
         break;
-      case GemColor.Purple:
-        this.ctx.fillStyle = "purple";
+      case "purple":
         this.ctx.beginPath();
         this.ctx.moveTo(offsetX + 50, offsetY + 10);
         this.ctx.lineTo(offsetX + 10 + 80, offsetY + 10 + 80);
@@ -93,8 +88,7 @@ export class Renderer {
         this.ctx.lineTo(offsetX + 50, offsetY + 10);
         this.ctx.fill();
         break;
-      case GemColor.White:
-        this.ctx.fillStyle = "white";
+      case "white":
         this.ctx.beginPath();
         this.ctx.arc(offsetX + 50, offsetY + 50, 40, 0, 2 * Math.PI);
         this.ctx.fill();
