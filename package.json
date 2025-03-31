@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "matching-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keawade/matching-game.git"
+  },
+  "keywords": [],
+  "author": "Keith Wade",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "build:dev": "tsc --watch",
+    "serve:dev": "http-server -a localhost -c-1 -o ./ ./src/"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^5.8.2"
+  }
+}
