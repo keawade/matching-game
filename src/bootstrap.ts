@@ -1,14 +1,14 @@
 import { Game } from "./engine.ts";
-import { Renderer } from "./render.ts";
+import { CanvasRenderer } from "./canvasRenderer.ts";
+import { HtmlRenderer } from "./htmlRenderer.ts";
 
-const canvas = document.querySelector("canvas");
+const root = document.querySelector("#root");
 
-if (canvas === null) {
-  console.error("failed to find canvas element");
-  throw "failed to find canvas element";
+if (root === null) {
+  console.error("failed to find root element");
+  throw "failed to find root element";
 }
 
-const renderer = new Renderer(canvas);
-const game = new Game(renderer);
-
-game.render();
+// const r1 = new CanvasRenderer(root);
+const r2 = new HtmlRenderer(root);
+const game = new Game(r2);
