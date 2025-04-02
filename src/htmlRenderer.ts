@@ -1,10 +1,18 @@
-import type { Board, Coordinate, Gem, Renderer } from "./types";
+import type { Board, Coordinate, Renderer } from "./types";
 
 export class HtmlRenderer implements Renderer {
   public constructor(public root: Element) {}
 
   public init(boardState: Board): void {
-    this.root.innerHTML = `<div class='board'>howdy</div>`;
+    const items = boardState
+      .flat()
+      .map(
+        (gem) =>
+          `<div class='box'><div class='gem gem-${gem.color} gem-${gem.type}'></div></div>`,
+      )
+      .join("");
+
+    this.root.innerHTML = `<div class='board'>${items}</div>`;
   }
 
   public selectGem(coordinates: Coordinate): void {

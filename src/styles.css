@@ -8,3 +8,49 @@ body {
 canvas {
   background-color: white;
 }
+
+.board {
+  padding: 1em;
+  display: grid;
+  grid-template-rows: repeat(8, 6em);
+  grid-template-columns: repeat(8, 6em);
+  grid-auto-flow: column;
+  gap: 1em;
+}
+
+.box {
+  aspect-ratio: 1;
+}
+
+.box:hover {
+  background-color: grey;
+}
+
+.gem {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.gem-red {
+  background-color: red;
+}
+.gem-orange {
+  background-color: orange;
+}
+.gem-yellow {
+  background-color: yellow;
+}
+.gem-green {
+  background-color: green;
+}
+.gem-blue {
+  background-color: blue;
+}
+.gem-purple {
+  background-color: purple;
+}
+.gem-white {
+  background-color: white;
+}
